@@ -1,0 +1,329 @@
+<section
+    class="view-panel"
+    id="view-questionnaire"
+    role="tabpanel"
+    aria-labelledby="tab-questionnaire"
+>
+    <section class="hero">
+        <div class="hero-copy">
+            <span class="eyebrow">BILAN DE BIEN-ÊTRE ÉTUDIANT</span>
+            <h1>Comment se passe<br>ta vie <em>étudiante&nbsp;?</em></h1>
+            <p>
+                Réponds avec sincérité, à ton rythme. Il n'y a pas de
+                bonne ou de mauvaise réponse — seulement ton expérience.
+            </p>
+            <div class="hero-meta">
+                <span>
+                    <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                        <circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M10 6v4l2.5 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    Environ 3 minutes
+                </span>
+                <i></i>
+                <span>
+                    <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                        <path d="M10 2.5 3.5 5v4.3c0 4 2.8 6.8 6.5 8.2 3.7-1.4 6.5-4.2 6.5-8.2V5L10 2.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                        <path d="m7.5 9.8 1.7 1.7 3.5-3.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Tes réponses sont traitées par les modèles du projet
+                </span>
+            </div>
+        </div>
+        <div class="hero-decoration">
+            <img
+                class="hero-thinking-student"
+                src="{{ url_for('static', filename='images/image.png') }}"
+                alt="Étudiant qui réfléchit à ses études"
+                decoding="async"
+            >
+        </div>
+    </section>
+
+    <form id="questionnaire" novalidate>
+        <section class="question-section" aria-labelledby="sectionProfile">
+            <div class="section-heading">
+                <span class="section-number">01</span>
+                <div>
+                    <h2 id="sectionProfile">Ton parcours &amp; ton entourage</h2>
+                    <p>Quelques repères sur ton quotidien et tes relations.</p>
+                </div>
+            </div>
+
+            <div class="question-grid">
+                <div class="question-field">
+                    <label for="International_Student"><span>01</span> Es-tu un étudiant international&nbsp;?</label>
+                    <select id="International_Student" name="International_Student" required>
+                        <option value="">Choisir une réponse</option>
+                        <option value="Yes">Oui</option><option value="No">Non</option>
+                    </select>
+                </div>
+                <div class="question-field">
+                    <label for="Study_Level"><span>02</span> Quel est ton niveau d'études&nbsp;?</label>
+                    <select id="Study_Level" name="Study_Level" required>
+                        <option value="">Choisir une réponse</option>
+                        <option value="Bachelor Year 1">Licence — année 1</option>
+                        <option value="Bachelor Year 2">Licence — année 2</option>
+                        <option value="Bachelor Year 3">Licence — année 3</option>
+                        <option value="Master Year 1">Master — année 1</option>
+                        <option value="Master Year 2">Master — année 2</option>
+                        <option value="PhD">Doctorat</option>
+                    </select>
+                </div>
+                <div class="question-field">
+                    <label for="GPA_Satisfaction"><span>03</span> Es-tu satisfait de tes résultats académiques&nbsp;?</label>
+                    <select id="GPA_Satisfaction" name="GPA_Satisfaction" required>
+                        <option value="">Choisir une réponse</option>
+                        <option value="Very Satisfied">Très satisfait</option>
+                        <option value="Satisfied">Satisfait</option>
+                        <option value="Neutral">Neutre</option>
+                        <option value="Dissatisfied">Insatisfait</option>
+                        <option value="Very Dissatisfied">Très insatisfait</option>
+                    </select>
+                </div>
+                <div class="question-field">
+                    <label for="Lives_Alone"><span>04</span> Vis-tu seul&nbsp;?</label>
+                    <select id="Lives_Alone" name="Lives_Alone" required>
+                        <option value="">Choisir une réponse</option>
+                        <option value="Yes">Oui</option><option value="No">Non</option>
+                    </select>
+                </div>
+                <div class="question-field">
+                    <label for="Relationship_Status"><span>05</span> Quelle est ta situation relationnelle&nbsp;?</label>
+                    <select id="Relationship_Status" name="Relationship_Status" required>
+                        <option value="">Choisir une réponse</option>
+                        <option value="Single">Célibataire</option>
+                        <option value="In a relationship">En couple</option>
+                        <option value="It's complicated">C'est compliqué</option>
+                    </select>
+                </div>
+                <div class="question-field">
+                    <label for="Sociability_Level"><span>06</span> Comment décrirais-tu ta sociabilité&nbsp;?</label>
+                    <select id="Sociability_Level" name="Sociability_Level" required>
+                        <option value="">Choisir une réponse</option>
+                        <option value="Very Sociable">Très sociable</option>
+                        <option value="Sociable">Sociable</option>
+                        <option value="Moderate">Modérée</option>
+                        <option value="Introverted">Introvertie</option>
+                        <option value="Very Introverted">Très introvertie</option>
+                    </select>
+                </div>
+                <div class="question-field">
+                    <label for="Close_Friends_Support"><span>07</span> Quel soutien reçois-tu de tes amis proches&nbsp;?</label>
+                    <select id="Close_Friends_Support" name="Close_Friends_Support" required>
+                        <option value="">Choisir une réponse</option>
+                        <option value="Strong support network">Un très bon soutien</option>
+                        <option value="Good support network">Un bon soutien</option>
+                        <option value="Some">Un peu</option>
+                        <option value="Very few">Très peu</option>
+                        <option value="None at all">Aucun</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <section class="question-section" aria-labelledby="sectionHabits">
+            <div class="section-heading">
+                <span class="section-number section-number--coral">02</span>
+                <div>
+                    <h2 id="sectionHabits">Tes habitudes au quotidien</h2>
+                    <p>Sommeil, alimentation, activité et habitudes de vie.</p>
+                </div>
+            </div>
+
+            <div class="question-grid">
+                <div class="question-field">
+                    <label for="Loneliness_Frequency"><span>08</span> À quelle fréquence te sens-tu seul&nbsp;?</label>
+                    <select id="Loneliness_Frequency" name="Loneliness_Frequency" required>
+                        <option value="">Choisir une réponse</option>
+                        <option value="Never">Jamais</option><option value="Rarely">Rarement</option>
+                        <option value="Sometimes">Parfois</option><option value="Often">Souvent</option>
+                        <option value="Very Often">Très souvent</option>
+                    </select>
+                </div>
+                <div class="question-field">
+                    <label for="Healthy_Diet"><span>09</span> Comment évalues-tu ton alimentation&nbsp;?</label>
+                    <select id="Healthy_Diet" name="Healthy_Diet" required>
+                        <option value="">Choisir une réponse</option>
+                        <option value="Very Good">Très bonne</option><option value="Good">Bonne</option>
+                        <option value="Average">Moyenne</option><option value="Poor">Mauvaise</option>
+                        <option value="Very Poor">Très mauvaise</option>
+                    </select>
+                </div>
+                <div class="question-field">
+                    <label for="Sleep_Quality"><span>10</span> Comment évalues-tu la qualité de ton sommeil&nbsp;?</label>
+                    <select id="Sleep_Quality" name="Sleep_Quality" required>
+                        <option value="">Choisir une réponse</option>
+                        <option value="Very Good">Très bonne</option><option value="Good">Bonne</option>
+                        <option value="Average">Moyenne</option><option value="Poor">Mauvaise</option>
+                        <option value="Very Poor">Très mauvaise</option>
+                    </select>
+                </div>
+                <div class="question-field">
+                    <label for="Physical_Activity"><span>11</span> À quelle fréquence pratiques-tu une activité physique&nbsp;?</label>
+                    <select id="Physical_Activity" name="Physical_Activity" required>
+                        <option value="">Choisir une réponse</option>
+                        <option value="Regularly">Régulièrement</option>
+                        <option value="Occasionally">Occasionnellement</option>
+                        <option value="Never">Jamais</option>
+                    </select>
+                </div>
+                <div class="question-field">
+                    <label for="Smoking_Frequency"><span>12</span> À quelle fréquence fumes-tu&nbsp;?</label>
+                    <select id="Smoking_Frequency" name="Smoking_Frequency" required>
+                        <option value="">Choisir une réponse</option>
+                        <option value="Never">Jamais</option><option value="Occasionally">Occasionnellement</option>
+                        <option value="Regularly">Régulièrement</option>
+                    </select>
+                </div>
+                <div class="question-field">
+                    <label for="Smoking_Reason"><span>13</span> Quelle est la raison de ta consommation de tabac&nbsp;?</label>
+                    <select id="Smoking_Reason" name="Smoking_Reason" required>
+                        <option value="">Choisir une réponse</option>
+                        <option value="Not applicable (Non-smoker)">Non concerné·e</option>
+                        <option value="Just for pleasure / Social habit">Plaisir ou habitude sociale</option>
+                        <option value="To avoid overthinking / relieve stress">Gérer le stress</option>
+                        <option value="To cope with loneliness / boredom">Gérer la solitude ou l'ennui</option>
+                    </select>
+                </div>
+                <div class="question-field">
+                    <label for="Alcohol_For_Stress"><span>14</span> Consommes-tu de l'alcool pour gérer le stress&nbsp;?</label>
+                    <select id="Alcohol_For_Stress" name="Alcohol_For_Stress" required>
+                        <option value="">Choisir une réponse</option>
+                        <option value="Never">Jamais</option><option value="Occasionally">Occasionnellement</option>
+                        <option value="Regularly">Régulièrement</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <section class="question-section" aria-labelledby="sectionFeelings">
+            <div class="section-heading">
+                <span class="section-number section-number--lavender">03</span>
+                <div>
+                    <h2 id="sectionFeelings">Ton ressenti &amp; ta charge mentale</h2>
+                    <p>Comment tu te sens face aux études et à la pression.</p>
+                </div>
+            </div>
+
+            <div class="question-grid">
+                <div class="question-field">
+                    <label for="Overthinking_Frequency"><span>15</span> À quelle fréquence réfléchis-tu excessivement&nbsp;?</label>
+                    <select id="Overthinking_Frequency" name="Overthinking_Frequency" required>
+                        <option value="">Choisir une réponse</option>
+                        <option value="Very Low">Très rarement</option><option value="Low">Rarement</option>
+                        <option value="Moderate">Modérément</option><option value="High">Souvent</option>
+                        <option value="Constant Overthinking">Presque constamment</option>
+                    </select>
+                </div>
+                <div class="question-field">
+                    <label for="Anxiety_And_Fears"><span>16</span> À quelle fréquence ressens-tu de l'anxiété ou des peurs&nbsp;?</label>
+                    <select id="Anxiety_And_Fears" name="Anxiety_And_Fears" required>
+                        <option value="">Choisir une réponse</option>
+                        <option value="Never">Jamais</option><option value="Rarely">Rarement</option>
+                        <option value="Sometimes">Parfois</option><option value="Often">Souvent</option>
+                        <option value="Very Often">Très souvent</option>
+                    </select>
+                </div>
+                <div class="question-field">
+                    <label for="Family_Academic_Pressure"><span>17</span> Quelle pression académique ressens-tu de ta famille&nbsp;?</label>
+                    <select id="Family_Academic_Pressure" name="Family_Academic_Pressure" required>
+                        <option value="">Choisir une réponse</option>
+                        <option value="No pressure">Aucune pression</option>
+                        <option value="Low pressure">Faible</option>
+                        <option value="Moderate pressure">Modérée</option>
+                        <option value="High pressure">Élevée</option>
+                        <option value="Extreme pressure">Très élevée</option>
+                    </select>
+                </div>
+                <div class="question-field">
+                    <label for="Overwhelmed_By_Study_Workload"><span>18</span> Te sens-tu dépassé·e par ta charge de travail&nbsp;?</label>
+                    <select id="Overwhelmed_By_Study_Workload" name="Overwhelmed_By_Study_Workload" required>
+                        <option value="">Choisir une réponse</option>
+                        <option value="Never">Jamais</option><option value="Rarely">Rarement</option>
+                        <option value="Sometimes">Parfois</option><option value="Often">Souvent</option>
+                        <option value="Very Often">Très souvent</option>
+                    </select>
+                </div>
+                <div class="question-field">
+                    <label for="Crying_Due_To_Stress"><span>19</span> À quelle fréquence pleures-tu à cause du stress&nbsp;?</label>
+                    <select id="Crying_Due_To_Stress" name="Crying_Due_To_Stress" required>
+                        <option value="">Choisir une réponse</option>
+                        <option value="Never">Jamais</option><option value="Rarely">Rarement</option>
+                        <option value="Sometimes">Parfois</option><option value="Often">Souvent</option>
+                        <option value="Very Often">Très souvent</option>
+                    </select>
+                </div>
+                <div class="question-field">
+                    <label for="Lack_Of_Rest_Time"><span>20</span> À quelle fréquence manques-tu de temps pour te reposer&nbsp;?</label>
+                    <select id="Lack_Of_Rest_Time" name="Lack_Of_Rest_Time" required>
+                        <option value="">Choisir une réponse</option>
+                        <option value="Never">Jamais</option><option value="Rarely">Rarement</option>
+                        <option value="Sometimes">Parfois</option><option value="Often">Souvent</option>
+                        <option value="Very Often">Très souvent</option>
+                    </select>
+                </div>
+                <div class="question-field">
+                    <label for="Morning_Fatigue"><span>21</span> À quelle fréquence ressens-tu de la fatigue le matin&nbsp;?</label>
+                    <select id="Morning_Fatigue" name="Morning_Fatigue" required>
+                        <option value="">Choisir une réponse</option>
+                        <option value="Never">Jamais</option><option value="Rarely">Rarement</option>
+                        <option value="Sometimes">Parfois</option><option value="Often">Souvent</option>
+                        <option value="Almost Every Day">Presque tous les jours</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <div class="form-actions">
+            <button class="button button--quiet" type="reset" id="resetButton">
+                Recommencer
+            </button>
+            <button class="button button--primary" type="submit" id="submitButton" disabled>
+                <span>Voir mon bilan</span>
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M4 10h12m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+        <p class="submit-hint" id="submitHint">Réponds aux 21 questions pour continuer.</p>
+    </form>
+
+    <div class="error-card" id="errorMessage" role="alert" hidden>
+        <span class="error-icon" aria-hidden="true">!</span>
+        <p id="errorText"></p>
+    </div>
+
+    <section class="loading-card" id="loadingState" aria-live="polite" hidden>
+        <div class="loading-art" aria-hidden="true">
+            <span class="loading-orbit"></span>
+            <span class="loading-core">✦</span>
+        </div>
+        <div>
+            <p class="loading-eyebrow">ANALYSE EN COURS</p>
+            <h2>On prépare ton bilan…</h2>
+            <p>Les deux modèles étudient tes réponses. Cela ne prend qu'un instant.</p>
+        </div>
+        <div class="loading-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+    </section>
+
+    <section class="results-section" id="resultsPanel" aria-live="polite" hidden>
+        <div class="results-heading">
+            <div>
+                <span class="eyebrow"><span></span> TON BILAN EST PRÊT</span>
+                <h2>Deux regards sur tes réponses.</h2>
+                <p>Voici les estimations produites par les modèles du projet.</p>
+            </div>
+            <span class="results-check" aria-hidden="true">✓</span>
+        </div>
+        <div class="results-grid" id="resultsGrid"></div>
+        <div class="result-disclaimer">
+            <span aria-hidden="true">ⓘ</span>
+            <p>
+                Ces résultats sont issus d'un modèle académique entraîné
+                sur un jeu de données artificiel. Ils ne constituent pas
+                un diagnostic et ne remplacent pas l'avis d'un professionnel.
+            </p>
+        </div>
+    </section>
+</section>

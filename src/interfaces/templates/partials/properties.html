@@ -1,0 +1,75 @@
+<section
+    class="view-panel dashboard-view"
+    id="view-properties"
+    role="tabpanel"
+    aria-labelledby="tab-properties"
+    hidden
+>
+    <div class="dashboard-heading">
+        <span class="eyebrow"><span></span> VUE D'ENSEMBLE</span>
+        <h1>Propriétés du projet</h1>
+        <p>Les repères qui décrivent le jeu de données et le questionnaire.</p>
+    </div>
+    <div class="stat-grid">
+        <article class="stat-card">
+            <span class="stat-icon stat-icon--blue" aria-hidden="true">500</span>
+            <p>Observations</p>
+            <small>Jeu de données artificiel</small>
+        </article>
+        <article class="stat-card">
+            <span class="stat-icon stat-icon--cyan" aria-hidden="true">400</span>
+            <p>Entraînement</p>
+            <small>Observations utilisées pour apprendre</small>
+        </article>
+        <article class="stat-card">
+            <span class="stat-icon stat-icon--violet" aria-hidden="true">100</span>
+            <p>Test</p>
+            <small>Observations réservées à l’évaluation</small>
+        </article>
+        <article class="stat-card">
+            <span class="stat-icon stat-icon--blue" aria-hidden="true">21</span>
+            <p>Variables d’entrée</p>
+            <small>Réponses fournies aux modèles</small>
+        </article>
+        <article class="stat-card">
+            <span class="stat-icon stat-icon--cyan" aria-hidden="true">91</span>
+            <p>Variables encodées</p>
+            <small>Après transformation One-Hot</small>
+        </article>
+        <article class="stat-card">
+            <span class="stat-icon stat-icon--violet" aria-hidden="true">2</span>
+            <p>Classes cibles</p>
+            <small>Stable ou à risque</small>
+        </article>
+    </div>
+    <div class="info-panel">
+        <div class="panel-heading">
+            <span class="panel-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M5 5.5h14v13H5zM8 9h8M8 12h8M8 15h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+            <div>
+                <h2>Structure des données</h2>
+                <p>Les données de test restent séparées pendant l’apprentissage.</p>
+            </div>
+        </div>
+        <div class="property-list">
+            <div><span>Fichier source</span><strong>dataset/dataset.csv</strong></div>
+            <div><span>Colonne cible</span><strong>Depression_Status</strong></div>
+            <div><span>Répartition</span><strong>400 entraînement · 100 test</strong></div>
+            <div><span>Encodage</span><strong>One-hot encoding · 21 → 91 variables</strong></div>
+            <div><span>Prévention des fuites</span><strong>Prétraitement ajusté sur l’entraînement</strong></div>
+        </div>
+    </div>
+    <div class="class-info-grid">
+        <article class="class-info-card">
+            <span class="class-dot class-dot--stable"></span>
+            <div><small>CLASSE 0</small><h3>Stable / sans dépression</h3></div>
+        </article>
+        <article class="class-info-card">
+            <span class="class-dot class-dot--risk"></span>
+            <div><small>CLASSE 1</small><h3>À risque / dépression</h3></div>
+        </article>
+    </div>
+</section>

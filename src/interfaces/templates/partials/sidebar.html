@@ -1,0 +1,149 @@
+<aside class="sidebar">
+    <a class="brand" href="/" aria-label="Équilibre étudiant, accueil">
+        <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none">
+                <path d="M20 5.5 34 13.25v13.5L20 34.5 6 26.75v-13.5L20 5.5Z" fill="currentColor" opacity=".18"/>
+                <path d="M13 21c4.2-1.6 7.3-4.7 9-9 4.7 4.1 5.8 9.1 2.8 13.2-2.5 3.4-7.5 3.8-10.4.9-1.4-1.4-1.9-3.2-1.4-5.1Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M14 27c2-3.4 4.2-5.8 7.3-7.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </span>
+        <span class="brand-name">Depression AI<span>.</span></span>
+    </a>
+
+    <nav class="sidebar-nav" role="tablist" aria-label="Navigation du tableau de bord">
+        <button
+            class="nav-item is-active"
+            id="tab-questionnaire"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="view-questionnaire"
+            data-view="questionnaire"
+        >
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M7 3.75h7.5L19 8.3v11.95H7a2 2 0 0 1-2-2V5.75a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                <path d="M14 4v5h5M9 13h6M9 16.5h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Questionnaire</span>
+            <span class="nav-item-arrow" aria-hidden="true">›</span>
+        </button>
+        <button
+            class="nav-item"
+            id="tab-properties"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="view-properties"
+            data-view="properties"
+            tabindex="-1"
+        >
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 5.5h7v6H4zM13 5.5h7v4h-7zM13 11.5h7v7h-7zM4 13.5h7v5H4z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+            </svg>
+            <span>Propriétés</span>
+            <span class="nav-item-arrow" aria-hidden="true">›</span>
+        </button>
+        <button
+            class="nav-item"
+            id="tab-history"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="view-history"
+            data-view="history"
+            tabindex="-1"
+        >
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4.5 11.5a7.5 7.5 0 1 0 2.2-5.3L4.5 8.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4.5 4.5v4h4M12 7.5v4.8l3.1 1.8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Historique</span>
+            <span class="nav-count" id="historyCount">0</span>
+        </button>
+        <button
+            class="nav-item"
+            id="tab-models"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="view-models"
+            data-view="models"
+            tabindex="-1"
+        >
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 3.5 4.5 7.7v8.6l7.5 4.2 7.5-4.2V7.7L12 3.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                <path d="m8.6 12 2.2 2.2 4.6-4.7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Modèles</span>
+            <span class="nav-item-arrow" aria-hidden="true">›</span>
+        </button>
+        <button
+            class="nav-item"
+            id="tab-charts"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="view-charts"
+            data-view="charts"
+            tabindex="-1"
+        >
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4.5 19.5V12M10 19.5V5M15.5 19.5v-9M21 19.5V8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+            <span>Graphiques</span>
+            <span class="nav-item-arrow" aria-hidden="true">›</span>
+        </button>
+    </nav>
+    <section class="progress-card" aria-labelledby="progressTitle">
+        <div class="progress-heading">
+            <div>
+                <p class="progress-label" id="progressTitle">TA PROGRESSION</p>
+                <p class="progress-count">
+                    <strong id="answeredCount">0</strong>
+                    <span>/</span>
+                    <span id="totalCount">21</span>
+                    <span>réponses</span>
+                </p>
+            </div>
+            <span class="progress-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path d="m5 12 4.2 4.2L19 6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+        </div>
+        <div
+            class="progress-track"
+            role="progressbar"
+            aria-label="Progression du questionnaire"
+            aria-valuemin="0"
+            aria-valuemax="21"
+            aria-valuenow="0"
+            id="progressTrack"
+        >
+            <span id="progressBar"></span>
+        </div>
+        <p class="progress-hint" id="progressMessage">
+            Chaque réponse te rapproche du bilan.
+        </p>
+    </section>
+
+    <div class="sidebar-bottom">
+        <div class="side-fact">
+            <span class="fact-icon" aria-hidden="true">21</span>
+            <span><strong>questions</strong><small>sur ton quotidien</small></span>
+        </div>
+        <div class="side-fact">
+            <span class="fact-icon fact-icon--models" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M12 3 4.5 7.2v9.6L12 21l7.5-4.2V7.2L12 3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                    <path d="m8.5 12 2.2 2.2 4.8-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+            <span><strong>2 modèles actifs</strong><small>pour tes bilans</small></span>
+        </div>
+        <p class="sidebar-disclaimer">
+            Projet académique sur données artificielles. Ce questionnaire
+            ne constitue pas un diagnostic médical.
+        </p>
+    </div>
+</aside>

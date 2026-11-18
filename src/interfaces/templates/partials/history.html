@@ -1,0 +1,60 @@
+<section
+    class="view-panel dashboard-view"
+    id="view-history"
+    role="tabpanel"
+    aria-labelledby="tab-history"
+    hidden
+>
+    <div class="dashboard-heading dashboard-heading--row">
+        <div>
+            <span class="eyebrow"><span></span> TES BILANS</span>
+            <h1>Historique des bilans</h1>
+            <p>Retrouve les réponses et les prédictions de tes bilans précédents.</p>
+        </div>
+        <div class="history-heading-actions">
+            <span class="session-badge"><span></span> Stocké dans ce navigateur</span>
+            <button class="history-clear-button" id="historyClearAll" type="button" hidden>
+                Supprimer tout
+            </button>
+        </div>
+    </div>
+    <p class="history-storage-note">
+        L’historique n’est pas synchronisé entre appareils. Effacer les données de ce navigateur peut le supprimer.
+    </p>
+    <div class="history-list" id="historyList">
+        <div class="empty-state" id="historyEmpty">
+            <span class="empty-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M4.5 11.5a7.5 7.5 0 1 0 2.2-5.3L4.5 8.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4.5 4.5v4h4M12 7.5v4.8l3.1 1.8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+            <h2>Aucun bilan pour le moment</h2>
+            <p>Après ton premier bilan, tu pourras ouvrir son historique pour retrouver les prédictions et tes réponses.</p>
+            <button class="text-button" type="button" data-open-view="questionnaire">
+                Commencer le questionnaire <span aria-hidden="true">→</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<dialog class="record-dialog" id="recordDialog" aria-labelledby="recordDialogTitle">
+    <div class="record-dialog-header">
+        <div>
+            <span class="eyebrow"><span></span> DÉTAIL DU BILAN</span>
+            <h2 id="recordDialogTitle">Bilan enregistré</h2>
+            <p id="recordDialogDate"></p>
+        </div>
+        <button class="record-dialog-close" id="recordDialogClose" type="button" aria-label="Fermer">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+    <section class="record-dialog-section" aria-labelledby="recordResultsTitle">
+        <h3 id="recordResultsTitle">Résultats des modèles</h3>
+        <div class="record-dialog-results" id="recordDialogResults"></div>
+    </section>
+    <section class="record-dialog-section" aria-labelledby="recordAnswersTitle">
+        <h3 id="recordAnswersTitle">Tes questions et réponses</h3>
+        <dl class="record-answer-list" id="recordDialogAnswers"></dl>
+    </section>
+</dialog>

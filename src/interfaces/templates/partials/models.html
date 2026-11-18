@@ -1,0 +1,96 @@
+<section
+    class="view-panel dashboard-view"
+    id="view-models"
+    role="tabpanel"
+    aria-labelledby="tab-models"
+    hidden
+>
+    <div class="dashboard-heading">
+        <span class="eyebrow"><span></span> CLASSIFICATION</span>
+        <h1>Les modèles comparés</h1>
+        <p>Sept modèles sont évalués sur le jeu de test ; SVM et régression logistique produisent les prédictions du questionnaire.</p>
+    </div>
+    <div class="model-detail-grid">
+        <article class="model-detail-card">
+            <div class="model-detail-top">
+                <span class="model-symbol">SVM</span>
+                <span class="model-type">MODÈLE 01</span>
+            </div>
+            <h2>Support Vector Machine</h2>
+            <p>
+                Sépare les classes en recherchant une frontière qui maximise leur marge.
+            </p>
+            <div class="model-tags"><span>Classification</span><span>Noyau RBF</span><span>Probabilités</span></div>
+            <div class="model-status model-status--live"><span></span> Actif pour les bilans</div>
+        </article>
+        <article class="model-detail-card">
+            <div class="model-detail-top">
+                <span class="model-symbol model-symbol--violet">LR</span>
+                <span class="model-type">MODÈLE 02</span>
+            </div>
+            <h2>Régression logistique</h2>
+            <p>
+                Estime la probabilité de chaque classe à partir d’une combinaison des variables.
+            </p>
+            <div class="model-tags"><span>Classification</span><span>Modèle linéaire</span><span>Probabilités</span></div>
+            <div class="model-status model-status--live"><span></span> Actif pour les bilans</div>
+        </article>
+        <article class="model-detail-card">
+            <div class="model-detail-top">
+                <span class="model-symbol model-symbol--violet">DT</span>
+                <span class="model-type">MODÈLE 03</span>
+            </div>
+            <h2>Arbre de décision</h2>
+            <p>Applique une suite de règles pour répartir les observations entre les classes.</p>
+            <div class="model-tags"><span>Règles</span><span>Arbre</span></div>
+            <div class="model-status model-status--evaluation"><span></span> Évalué sur le jeu de test</div>
+        </article>
+        <article class="model-detail-card">
+            <div class="model-detail-top">
+                <span class="model-symbol">KNN</span>
+                <span class="model-type">MODÈLE 04</span>
+            </div>
+            <h2>K plus proches voisins</h2>
+            <p>Attribue une classe en comparant chaque observation à ses voisins les plus proches.</p>
+            <div class="model-tags"><span>Voisinage</span><span>Distance</span></div>
+            <div class="model-status model-status--evaluation"><span></span> Évalué sur le jeu de test</div>
+        </article>
+        <article class="model-detail-card">
+            <div class="model-detail-top">
+                <span class="model-symbol model-symbol--violet">ANN</span>
+                <span class="model-type">MODÈLE 05</span>
+            </div>
+            <h2>Réseau de neurones (ANN)</h2>
+            <p>Apprend des relations complexes à travers plusieurs couches de neurones.</p>
+            <div class="model-tags"><span>Réseau neuronal</span><span>Non linéaire</span></div>
+            <div class="model-status model-status--evaluation"><span></span> Évalué sur le jeu de test</div>
+        </article>
+        <article class="model-detail-card">
+            <div class="model-detail-top">
+                <span class="model-symbol">RF</span>
+                <span class="model-type">MODÈLE 06</span>
+            </div>
+            <h2>Forêt aléatoire</h2>
+            <p>Combine les décisions de plusieurs arbres pour produire une prédiction agrégée.</p>
+            <div class="model-tags"><span>Ensemble</span><span>Arbres</span></div>
+            <div class="model-status model-status--evaluation"><span></span> Évalué sur le jeu de test</div>
+        </article>
+        <article class="model-detail-card">
+            <div class="model-detail-top">
+                <span class="model-symbol model-symbol--violet">GB</span>
+                <span class="model-type">MODÈLE 07</span>
+            </div>
+            <h2>Gradient Boosting</h2>
+            <p>Entraîne des arbres successifs qui corrigent progressivement les erreurs précédentes.</p>
+            <div class="model-tags"><span>Ensemble</span><span>Boosting</span></div>
+            <div class="model-status model-status--evaluation"><span></span> Évalué sur le jeu de test</div>
+        </article>
+    </div>
+    <div class="info-panel model-info-panel">
+        <span class="panel-icon" aria-hidden="true">i</span>
+        <p>
+            Les cinq autres modèles servent à la comparaison expérimentale et ne sont pas appelés par le questionnaire.
+            Consulte <strong>Graphiques</strong> pour comparer leurs métriques et matrices de confusion.
+        </p>
+    </div>
+</section>

@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+Thumbs.db
+.DS_Store
+
+src/saved_models/*.joblib
+src/saved_models/*.pkl
+src/saved_models/*.pickle
+src/results/*.png

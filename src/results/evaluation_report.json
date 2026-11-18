@@ -1,0 +1,454 @@
+{
+  "generated_at": "2026-11-18T17:51:41+03:00",
+  "dataset": {
+    "total_observations": 500,
+    "training_observations": 400,
+    "test_observations": 100,
+    "input_features": 21,
+    "encoded_features": 91,
+    "class_count": 2,
+    "class_distribution": {
+      "training": {
+        "Stable / Not Depressed": 220,
+        "At Risk / Depressed": 180
+      },
+      "test": {
+        "Stable / Not Depressed": 55,
+        "At Risk / Depressed": 45
+      }
+    }
+  },
+  "models": {
+    "Logistic Regression": {
+      "parameters": {
+        "C": 1.0,
+        "class_weight": null,
+        "dual": false,
+        "fit_intercept": true,
+        "intercept_scaling": 1,
+        "l1_ratio": null,
+        "max_iter": 1000,
+        "multi_class": "deprecated",
+        "n_jobs": null,
+        "penalty": "l2",
+        "random_state": 42,
+        "solver": "lbfgs",
+        "tol": 0.0001,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "metrics": {
+        "Accuracy": 0.89,
+        "Sensitivity": 0.8888888888888888,
+        "Specificity": 0.8909090909090909,
+        "Precision": 0.8695652173913043,
+        "F1-score": 0.8791208791208791
+      },
+      "confusion_matrix": [
+        [
+          49,
+          6
+        ],
+        [
+          5,
+          40
+        ]
+      ],
+      "roc_auc": 0.9450505050505051,
+      "cross_validation": {
+        "Accuracy": {
+          "Mean": 0.8525,
+          "Standard Deviation": 0.03297726489568231
+        },
+        "Sensitivity": {
+          "Mean": 0.8388888888888889,
+          "Standard Deviation": 0.061864048475889104
+        },
+        "Specificity": {
+          "Mean": 0.8636363636363636,
+          "Standard Deviation": 0.051826155686324475
+        },
+        "F1-score": {
+          "Mean": 0.8361911163007054,
+          "Standard Deviation": 0.03670963119548221
+        }
+      }
+    },
+    "Decision Tree": {
+      "parameters": {
+        "ccp_alpha": 0.0,
+        "class_weight": null,
+        "criterion": "gini",
+        "max_depth": 5,
+        "max_features": null,
+        "max_leaf_nodes": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "random_state": 42,
+        "splitter": "best"
+      },
+      "metrics": {
+        "Accuracy": 0.72,
+        "Sensitivity": 0.6666666666666666,
+        "Specificity": 0.7636363636363637,
+        "Precision": 0.6976744186046512,
+        "F1-score": 0.6818181818181818
+      },
+      "confusion_matrix": [
+        [
+          42,
+          13
+        ],
+        [
+          15,
+          30
+        ]
+      ],
+      "roc_auc": 0.7553535353535354,
+      "cross_validation": {
+        "Accuracy": {
+          "Mean": 0.7350000000000001,
+          "Standard Deviation": 0.03102418411497716
+        },
+        "Sensitivity": {
+          "Mean": 0.75,
+          "Standard Deviation": 0.10393492741038723
+        },
+        "Specificity": {
+          "Mean": 0.7227272727272727,
+          "Standard Deviation": 0.10102777623133122
+        },
+        "F1-score": {
+          "Mean": 0.7161370140399115,
+          "Standard Deviation": 0.03817262519844281
+        }
+      }
+    },
+    "KNN": {
+      "parameters": {
+        "algorithm": "auto",
+        "leaf_size": 30,
+        "metric": "minkowski",
+        "metric_params": null,
+        "n_jobs": null,
+        "n_neighbors": 5,
+        "p": 2,
+        "weights": "uniform"
+      },
+      "metrics": {
+        "Accuracy": 0.74,
+        "Sensitivity": 0.8,
+        "Specificity": 0.6909090909090909,
+        "Precision": 0.6792452830188679,
+        "F1-score": 0.7346938775510204
+      },
+      "confusion_matrix": [
+        [
+          38,
+          17
+        ],
+        [
+          9,
+          36
+        ]
+      ],
+      "roc_auc": 0.8375757575757576,
+      "cross_validation": {
+        "Accuracy": {
+          "Mean": 0.705,
+          "Standard Deviation": 0.050990195135927834
+        },
+        "Sensitivity": {
+          "Mean": 0.7166666666666666,
+          "Standard Deviation": 0.04779069592801461
+        },
+        "Specificity": {
+          "Mean": 0.6954545454545455,
+          "Standard Deviation": 0.054922936243611685
+        },
+        "F1-score": {
+          "Mean": 0.6866156546156545,
+          "Standard Deviation": 0.050684156279755546
+        }
+      }
+    },
+    "SVM": {
+      "parameters": {
+        "C": 1.0,
+        "break_ties": false,
+        "cache_size": 200,
+        "class_weight": null,
+        "coef0": 0.0,
+        "decision_function_shape": "ovr",
+        "degree": 3,
+        "gamma": "scale",
+        "kernel": "rbf",
+        "max_iter": -1,
+        "probability": true,
+        "random_state": 42,
+        "shrinking": true,
+        "tol": 0.001,
+        "verbose": false
+      },
+      "metrics": {
+        "Accuracy": 0.9,
+        "Sensitivity": 0.8888888888888888,
+        "Specificity": 0.9090909090909091,
+        "Precision": 0.8888888888888888,
+        "F1-score": 0.8888888888888888
+      },
+      "confusion_matrix": [
+        [
+          50,
+          5
+        ],
+        [
+          5,
+          40
+        ]
+      ],
+      "roc_auc": 0.9430303030303029,
+      "cross_validation": {
+        "Accuracy": {
+          "Mean": 0.8325000000000001,
+          "Standard Deviation": 0.023184046238739257
+        },
+        "Sensitivity": {
+          "Mean": 0.7611111111111112,
+          "Standard Deviation": 0.08351831321318286
+        },
+        "Specificity": {
+          "Mean": 0.8909090909090909,
+          "Standard Deviation": 0.03340213285613426
+        },
+        "F1-score": {
+          "Mean": 0.801183344591306,
+          "Standard Deviation": 0.03892887861241516
+        }
+      }
+    },
+    "ANN": {
+      "parameters": {
+        "activation": "relu",
+        "alpha": 0.0001,
+        "batch_size": "auto",
+        "beta_1": 0.9,
+        "beta_2": 0.999,
+        "early_stopping": false,
+        "epsilon": 1e-08,
+        "hidden_layer_sizes": [
+          64,
+          32
+        ],
+        "learning_rate": "constant",
+        "learning_rate_init": 0.001,
+        "max_fun": 15000,
+        "max_iter": 200,
+        "momentum": 0.9,
+        "n_iter_no_change": 1000,
+        "nesterovs_momentum": true,
+        "power_t": 0.5,
+        "random_state": 42,
+        "shuffle": true,
+        "solver": "adam",
+        "tol": 0.0,
+        "validation_fraction": 0.1,
+        "verbose": false,
+        "warm_start": false
+      },
+      "metrics": {
+        "Accuracy": 0.87,
+        "Sensitivity": 0.9111111111111111,
+        "Specificity": 0.8363636363636363,
+        "Precision": 0.82,
+        "F1-score": 0.8631578947368421
+      },
+      "confusion_matrix": [
+        [
+          46,
+          9
+        ],
+        [
+          4,
+          41
+        ]
+      ],
+      "roc_auc": 0.9454545454545454,
+      "cross_validation": {
+        "Accuracy": {
+          "Mean": 0.8474999999999999,
+          "Standard Deviation": 0.01658312395177701
+        },
+        "Sensitivity": {
+          "Mean": 0.8333333333333334,
+          "Standard Deviation": 0.046481112585226414
+        },
+        "Specificity": {
+          "Mean": 0.859090909090909,
+          "Standard Deviation": 0.044069816885602985
+        },
+        "F1-score": {
+          "Mean": 0.830817459656681,
+          "Standard Deviation": 0.018056904581606626
+        }
+      },
+      "training_epochs": 200
+    },
+    "Random Forest": {
+      "parameters": {
+        "bootstrap": true,
+        "ccp_alpha": 0.0,
+        "class_weight": null,
+        "criterion": "gini",
+        "max_depth": 5,
+        "max_features": "sqrt",
+        "max_leaf_nodes": null,
+        "max_samples": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "monotonic_cst": null,
+        "n_estimators": 100,
+        "n_jobs": null,
+        "oob_score": false,
+        "random_state": 42,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "metrics": {
+        "Accuracy": 0.89,
+        "Sensitivity": 0.8444444444444444,
+        "Specificity": 0.9272727272727272,
+        "Precision": 0.9047619047619048,
+        "F1-score": 0.8735632183908046
+      },
+      "confusion_matrix": [
+        [
+          51,
+          4
+        ],
+        [
+          7,
+          38
+        ]
+      ],
+      "roc_auc": 0.9426262626262626,
+      "cross_validation": {
+        "Accuracy": {
+          "Mean": 0.7925,
+          "Standard Deviation": 0.016955824957813153
+        },
+        "Sensitivity": {
+          "Mean": 0.6722222222222223,
+          "Standard Deviation": 0.05386310952684809
+        },
+        "Specificity": {
+          "Mean": 0.8909090909090909,
+          "Standard Deviation": 0.03340213285613421
+        },
+        "F1-score": {
+          "Mean": 0.7435858726319466,
+          "Standard Deviation": 0.02880910907173657
+        }
+      }
+    },
+    "Gradient Boosting": {
+      "parameters": {
+        "ccp_alpha": 0.0,
+        "criterion": "friedman_mse",
+        "init": null,
+        "learning_rate": 0.1,
+        "loss": "log_loss",
+        "max_depth": 3,
+        "max_features": null,
+        "max_leaf_nodes": null,
+        "min_impurity_decrease": 0.0,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2,
+        "min_weight_fraction_leaf": 0.0,
+        "n_estimators": 100,
+        "n_iter_no_change": null,
+        "random_state": 42,
+        "subsample": 1.0,
+        "tol": 0.0001,
+        "validation_fraction": 0.1,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "metrics": {
+        "Accuracy": 0.86,
+        "Sensitivity": 0.8444444444444444,
+        "Specificity": 0.8727272727272727,
+        "Precision": 0.8444444444444444,
+        "F1-score": 0.8444444444444444
+      },
+      "confusion_matrix": [
+        [
+          48,
+          7
+        ],
+        [
+          7,
+          38
+        ]
+      ],
+      "roc_auc": 0.9474747474747475,
+      "cross_validation": {
+        "Accuracy": {
+          "Mean": 0.8275,
+          "Standard Deviation": 0.02669269563007827
+        },
+        "Sensitivity": {
+          "Mean": 0.7555555555555555,
+          "Standard Deviation": 0.05091750772173158
+        },
+        "Specificity": {
+          "Mean": 0.8863636363636364,
+          "Standard Deviation": 0.04767312946227961
+        },
+        "F1-score": {
+          "Mean": 0.7974285500700488,
+          "Standard Deviation": 0.03130863619675035
+        }
+      }
+    }
+  },
+  "mcnemar": {
+    "Contingency Table": [
+      [
+        88,
+        2
+      ],
+      [
+        1,
+        9
+      ]
+    ],
+    "Statistic": 1.0,
+    "P-value": 1.0
+  },
+  "graphs": [
+    {
+      "title": "Courbes ROC",
+      "description": "Sensibilité comparée au taux de faux positifs.",
+      "file": "roc_curves.png",
+      "alt": "Courbes ROC des sept classificateurs."
+    },
+    {
+      "title": "Matrices de confusion",
+      "description": "Prédictions correctes et erreurs par classe.",
+      "file": "confusion_matrices.png",
+      "alt": "Matrices de confusion des sept classificateurs."
+    },
+    {
+      "title": "Apprentissage du réseau neuronal",
+      "description": "Évolution de la perte pendant l'entraînement de l'ANN.",
+      "file": "ann_loss_curve.png",
+      "alt": "Courbe de perte d'entraînement de l'ANN."
+    }
+  ]
+}

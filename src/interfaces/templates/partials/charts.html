@@ -1,0 +1,70 @@
+<section
+    class="view-panel dashboard-view"
+    id="view-charts"
+    role="tabpanel"
+    aria-labelledby="tab-charts"
+    hidden
+>
+    <div class="dashboard-heading">
+        <span class="eyebrow"><span></span> VISUALISATION</span>
+        <h1>Graphiques &amp; résultats</h1>
+        <p>Comparaison des performances et matrices de confusion des sept modèles.</p>
+    </div>
+    <div class="chart-grid">
+        {% for model_name, model in evaluation_models.items() %}
+        <article class="chart-card">
+            <h2>{{ model_name }}</h2>
+            <p>Performances sur les données de test</p>
+
+            <div class="chart-metrics">
+                {% for metric_key, metric_label in chart_metrics %}
+                {% set metric_value = model["roc_auc"] if metric_key == "roc_auc" else model["metrics"][metric_key] %}
+                <div class="chart-metric">
+                    <div class="chart-metric-heading">
+                        <span>{{ metric_label }}</span>
+                        <strong>{{ "%.1f"|format(metric_value * 100) }} %</strong>
+                    </div>
+                    <progress
+                        class="chart-metric-track"
+                        max="100"
+                        value="{{ metric_value * 100 }}"
+                        aria-label="{{ metric_label }} : {{ "%.1f"|format(metric_value * 100) }} %"
+                    >{{ "%.1f"|format(metric_value * 100) }} %</progress>
+                </div>
+                {% endfor %}
+            </div>
+
+            {% set matrix = model["confusion_matrix"] %}
+            <div class="confusion-matrix">
+                <h3>Matrice de confusion</h3>
+                <table aria-label="Matrice de confusion — {{ model_name }}">
+                    <thead>
+                        <tr>
+                            <th scope="col">Réel / prédit</th>
+                            <th scope="col">Stable</th>
+                            <th scope="col">À risque</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Stable</th>
+                            <td class="matrix-correct">{{ matrix[0][0] }}</td>
+                            <td class="matrix-error">{{ matrix[0][1] }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">À risque</th>
+                            <td class="matrix-error">{{ matrix[1][0] }}</td>
+                            <td class="matrix-correct">{{ matrix[1][1] }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+    <p class="data-note">
+        Résultats du jeu de test ({{ evaluation_test_count }} observations), calculés le
+        {{ evaluation_generated_at[:10] }}. Les lignes indiquent la classe réelle et les
+        colonnes la classe prédite. Les résultats d’évaluation sont distincts du bilan individuel.
+    </p>
+</section>
