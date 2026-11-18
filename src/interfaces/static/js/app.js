@@ -32,14 +32,23 @@ const recordDialogClose = document.getElementById("recordDialogClose");
 const serverWarning = document.getElementById("serverWarning");
 const HISTORY_STORAGE_KEY = "equilibre-bilans-v1";
 const sectionNames = {
-    questionnaire: "Questionnaire",
-    properties: "Propriétés",
-    history: "Historique",
-    models: "Modèles",
-    charts: "Graphiques",
+    questionnaire: "Anket",
+    properties: "Özellikler",
+    history: "Geçmiş",
+    models: "Modeller",
+    charts: "Grafikler",
 };
 let sessionHistory = [];
 let historyStorageReady = true;
+
+const splashScreen = document.getElementById("splashScreen");
+if (splashScreen) {
+    document.body.style.overflow = "hidden";
+    window.setTimeout(() => {
+        splashScreen.remove();
+        document.body.style.removeProperty("overflow");
+    }, 1000);
+}
 
 if (serverWarning) {
     serverWarning.hidden = window.location.protocol !== "file:";
@@ -58,17 +67,17 @@ function updateProgress() {
     submitButton.disabled = !isComplete;
 
     progressMessage.textContent = isComplete
-        ? "C'est complet. Tu peux découvrir ton bilan."
-        : "Chaque réponse te rapproche du bilan.";
+        ? "Tüm yanıtlar tamamlandı. Değerlendirmeni görebilirsin."
+        : "Her yanıt değerlendirmene daha da yaklaştırır.";
     submitHint.textContent = isComplete
-        ? "Tout est prêt — tes réponses seront analysées par les modèles."
-        : `Réponds aux ${questionFields.length} questions pour continuer.`;
+        ? "Her şey hazır — yanıtların modeller tarafından analiz edilecek."
+        : `Devam etmek için ${questionFields.length} soruyu yanıtla.`;
 }
 
 function createProbabilityRow(label, probability) {
     const percentage = Number(probability);
     if (!Number.isFinite(percentage)) {
-        throw new Error("Les probabilités reçues ne sont pas valides.");
+        throw new Error("Alınan olasılıklar geçerli değil.");
     }
 
     const row = document.createElement("div");
@@ -90,7 +99,7 @@ function createProbabilityRow(label, probability) {
     track.setAttribute("aria-label", `${label} : ${percentage.toFixed(2)} %`);
 
     const fill = document.createElement("div");
-    const isRisk = label === "At Risk / Depressed";
+    const isRisk = label === "Riskli / Depresif";
     fill.className = `probability-fill${isRisk ? " probability-fill--risk" : ""}`;
     fill.style.width = `${Math.min(100, Math.max(0, percentage))}%`;
     track.appendChild(fill);
@@ -111,7 +120,7 @@ function createModelCard(modelName, modelData) {
             modelData.prediction
         )
     ) {
-        throw new Error("Le format des résultats reçus est incomplet.");
+        throw new Error("Alınan sonuçların biçimi eksik.");
     }
 
     const probabilityValues = Object.values(modelData.probabilities).map(Number);
@@ -121,7 +130,7 @@ function createModelCard(modelName, modelData) {
             (value) => !Number.isFinite(value) || value < 0 || value > 100
         )
     ) {
-        throw new Error("Les probabilités reçues ne sont pas valides.");
+        throw new Error("Alınan olasılıklar geçerli değil.");
     }
 
     const card = document.createElement("article");
@@ -136,28 +145,29 @@ function createModelCard(modelName, modelData) {
     icon.textContent = modelName === "SVM" ? "S" : "LR";
 
     const modelTitle = document.createElement("p");
-    modelTitle.textContent = modelName === "SVM" ? "Support Vector Machine" : modelName;
+    modelTitle.textContent =
+        modelName === "SVM" ? "Destek Vektör Makinesi" : "Lojistik Regresyon";
 
     const subtitle = document.createElement("small");
-    subtitle.textContent = "Modèle de classification";
+    subtitle.textContent = "Sınıflandırma modeli";
     modelTitle.appendChild(subtitle);
     header.append(icon, modelTitle);
 
     const prediction = document.createElement("div");
     const predictionLabel = modelData.prediction;
-    const stable = predictionLabel === "Stable / Not Depressed";
+    const stable = predictionLabel === "Stabil / Depresif Değil";
     prediction.className = `result-label ${stable ? "result-label--stable" : "result-label--risk"}`;
     prediction.textContent = predictionLabel;
 
     const probabilityTitle = document.createElement("p");
     probabilityTitle.className = "probability-title";
-    probabilityTitle.textContent = "Probabilités estimées";
+    probabilityTitle.textContent = "Tahmini olasılıklar";
 
     const probabilityRows = Object.entries(modelData.probabilities).map(
         ([label, value]) => createProbabilityRow(label, value)
     );
     if (probabilityRows.length === 0) {
-        throw new Error("Aucune probabilité n'a été fournie par le modèle.");
+        throw new Error("Model tarafından hiçbir olasılık sağlanmadı.");
     }
 
     card.append(header, prediction, probabilityTitle, ...probabilityRows);
@@ -166,7 +176,7 @@ function createModelCard(modelName, modelData) {
 
 function displayResults(data) {
     if (!data || !data.SVM || !data["Logistic Regression"]) {
-        throw new Error("La réponse du serveur ne contient pas les deux résultats.");
+        throw new Error("Sunucu yanıtı iki modeli içermiyor.");
     }
 
     resultsGrid.replaceChildren(
@@ -209,16 +219,16 @@ function createHistoryEntry(record, index) {
     openButton.setAttribute("aria-controls", "recordDialog");
     openButton.setAttribute(
         "aria-label",
-        `Voir le détail du bilan n° ${sessionHistory.length - index}`
+        `Değerlendirme detayını görüntüle: ${sessionHistory.length - index}`
     );
 
     const deleteButton = document.createElement("button");
     deleteButton.className = "history-delete-button";
     deleteButton.type = "button";
-    deleteButton.textContent = "Supprimer";
+    deleteButton.textContent = "Sil";
     deleteButton.setAttribute(
         "aria-label",
-        `Supprimer le bilan n° ${sessionHistory.length - index}`
+        `Değerlendirmeyi sil: ${sessionHistory.length - index}`
     );
 
     const content = document.createElement("div");
@@ -228,10 +238,10 @@ function createHistoryEntry(record, index) {
     details.className = "history-entry-main";
 
     const title = document.createElement("strong");
-    title.textContent = `Bilan n° ${sessionHistory.length - index}`;
+    title.textContent = `Değerlendirme ${sessionHistory.length - index}`;
 
     const date = document.createElement("small");
-    date.textContent = new Intl.DateTimeFormat("fr-FR", {
+    date.textContent = new Intl.DateTimeFormat("tr-TR", {
         dateStyle: "medium",
         timeStyle: "short",
     }).format(new Date(record.date));
@@ -243,9 +253,9 @@ function createHistoryEntry(record, index) {
     for (const [modelName, modelData] of Object.entries(record.results)) {
         const result = document.createElement("span");
         const prediction = modelData.prediction;
-        const isRisk = prediction === "At Risk / Depressed";
+        const isRisk = prediction === "Riskli / Depresif";
         result.className = `history-pill${isRisk ? " history-pill--risk" : ""}`;
-        result.textContent = `${modelName === "SVM" ? "SVM" : "Régression logistique"} : ${prediction}`;
+        result.textContent = `${modelName === "SVM" ? "SVM" : "Lojistik Regresyon"} : ${prediction}`;
         predictions.appendChild(result);
     }
 
@@ -282,14 +292,14 @@ function saveSessionHistory() {
     } catch {
         historyStorageReady = false;
         errorText.textContent =
-            "La modification de l'historique n'a pas pu être enregistrée dans ce navigateur.";
+            "Geçmiş değişikliği bu tarayıcıya kaydedilemedi.";
         errorMessage.hidden = false;
         return false;
     }
 }
 
 function deleteHistoryRecord(index) {
-    if (!window.confirm("Supprimer ce bilan de ton historique ?")) {
+    if (!window.confirm("Bu değerlendirme geçmişten silinsin mi?")) {
         return;
     }
 
@@ -299,7 +309,7 @@ function deleteHistoryRecord(index) {
 }
 
 historyClearAll.addEventListener("click", () => {
-    if (!window.confirm("Supprimer tous les bilans enregistrés ?")) {
+    if (!window.confirm("Kayıtlı tüm değerlendirmeler silinsin mi?")) {
         return;
     }
 
@@ -309,8 +319,8 @@ historyClearAll.addEventListener("click", () => {
 });
 
 function openRecord(record, index) {
-    recordDialogTitle.textContent = `Bilan n° ${sessionHistory.length - index}`;
-    recordDialogDate.textContent = new Intl.DateTimeFormat("fr-FR", {
+    recordDialogTitle.textContent = `Değerlendirme ${sessionHistory.length - index}`;
+    recordDialogDate.textContent = new Intl.DateTimeFormat("tr-TR", {
         dateStyle: "full",
         timeStyle: "short",
     }).format(new Date(record.date));
@@ -389,7 +399,7 @@ function loadSessionHistory() {
 
     const records = JSON.parse(savedHistory);
     if (!Array.isArray(records) || !records.every(isValidStoredRecord)) {
-        throw new Error("Le format de l'historique enregistré est invalide.");
+        throw new Error("Kayıtlı geçmişin biçimi geçersiz.");
     }
     return records;
 }
@@ -461,7 +471,7 @@ questionnaire.addEventListener("submit", async (event) => {
 
     if (window.location.protocol === "file:") {
         errorText.textContent =
-            "La page est ouverte directement comme fichier. Lance `python app.py` à la racine du projet, puis ouvre http://127.0.0.1:5000/.";
+            "Sayfa doğrudan dosya olarak açılmış. Projenin kökünde `python app.py` komutunu çalıştır ve http://127.0.0.1:5000/ adresini aç.";
         errorMessage.hidden = false;
         errorMessage.scrollIntoView({ behavior: "smooth", block: "center" });
         return;
@@ -490,7 +500,7 @@ questionnaire.addEventListener("submit", async (event) => {
             });
         } catch {
             throw new Error(
-                "Impossible de joindre Flask. Lance `python app.py`, puis utilise http://127.0.0.1:5000/."
+                "Flask sunucusuna bağlanılamadı. `python app.py` komutunu çalıştırıp http://127.0.0.1:5000/ adresini kullan."
             );
         }
 
@@ -498,11 +508,11 @@ questionnaire.addEventListener("submit", async (event) => {
         try {
             responseData = await response.json();
         } catch {
-            throw new Error("Le serveur a renvoyé une réponse illisible.");
+            throw new Error("Sunucu okunamayan bir yanıt gönderdi.");
         }
 
         if (!response.ok) {
-            throw new Error(responseData.error || "L'analyse n'a pas abouti.");
+            throw new Error(responseData.error || "Analiz tamamlanamadı.");
         }
 
         await minimumLoadingTime;
@@ -510,7 +520,7 @@ questionnaire.addEventListener("submit", async (event) => {
         addSessionRecord(responseData);
         resultsPanel.scrollIntoView({ behavior: "smooth", block: "start" });
     } catch (error) {
-        errorText.textContent = error.message || "Une erreur inattendue est survenue.";
+        errorText.textContent = error.message || "Beklenmeyen bir hata oluştu.";
         errorMessage.hidden = false;
         errorMessage.scrollIntoView({ behavior: "smooth", block: "center" });
     } finally {
@@ -525,7 +535,7 @@ try {
 } catch (error) {
     historyStorageReady = false;
     errorText.textContent =
-        `L'historique enregistré n'a pas pu être chargé : ${error.message}`;
+        `Kayıtlı geçmiş yüklenemedi: ${error.message}`;
     errorMessage.hidden = false;
 }
 renderHistory();

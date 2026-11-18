@@ -17,11 +17,11 @@ STATIC_PATH = INTERFACE_PATH / "static"
 EVALUATION_REPORT_PATH = SRC_PATH / "results" / "evaluation_report.json"
 
 CHART_METRICS = (
-    ("Accuracy", "Exactitude"),
-    ("Sensitivity", "Sensibilité"),
-    ("Specificity", "Spécificité"),
-    ("Precision", "Précision"),
-    ("F1-score", "Score F1"),
+    ("Accuracy", "Doğruluk"),
+    ("Sensitivity", "Duyarlılık"),
+    ("Specificity", "Belirlilik"),
+    ("Precision", "Kesinlik"),
+    ("F1-score", "F1 Puanı"),
     ("roc_auc", "AUC ROC"),
 )
 
@@ -32,8 +32,8 @@ app = Flask(
 )
 
 LABELS = {
-    0: "Stable / Not Depressed",
-    1: "At Risk / Depressed",
+    0: "Stabil / Depresif Değil",
+    1: "Riskli / Depresif",
 }
 
 
@@ -41,7 +41,7 @@ def load_model_bundle(file_name):
     """Load a trusted local artifact containing a model and its preprocessor."""
     model_path = MODELS_PATH / file_name
     if not model_path.is_file():
-        raise FileNotFoundError(f"Saved model artifact not found: {model_path}")
+        raise FileNotFoundError(f"Kayıtlı model dosyası bulunamadı: {model_path}")
 
     model_bundle = joblib.load(model_path)
     if not isinstance(model_bundle, dict) or not {
@@ -49,7 +49,7 @@ def load_model_bundle(file_name):
         "preprocessor",
     }.issubset(model_bundle):
         raise ValueError(
-            f"Saved model artifact must contain 'model' and 'preprocessor': "
+            f"Kayıtlı model dosyası 'model' ve 'preprocessor' içermelidir: "
             f"{model_path}"
         )
 

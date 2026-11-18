@@ -6,11 +6,11 @@
 >
     <section class="hero">
         <div class="hero-copy">
-            <span class="eyebrow">BILAN DE BIEN-ÊTRE ÉTUDIANT</span>
-            <h1>Comment se passe<br>ta vie <em>étudiante&nbsp;?</em></h1>
+            <span class="eyebrow">ÖĞRENCİ RUH SAĞLIĞI DEĞERLENDİRMESİ</span>
+            <h1>Öğrenci hayatın<br>nasıl <em>gidiyor&nbsp;?</em></h1>
             <p>
-                Réponds avec sincérité, à ton rythme. Il n'y a pas de
-                bonne ou de mauvaise réponse — seulement ton expérience.
+                Kendin için en doğru cevabı ver. Her yanıtın senin deneyimini
+                yansıtır; doğru veya yanlış cevap yoktur.
             </p>
             <div class="hero-meta">
                 <span>
@@ -18,7 +18,7 @@
                         <circle cx="10" cy="10" r="7.5" stroke="currentColor" stroke-width="1.5"/>
                         <path d="M10 6v4l2.5 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                     </svg>
-                    Environ 3 minutes
+                    Yaklaşık 3 dakika
                 </span>
                 <i></i>
                 <span>
@@ -26,7 +26,7 @@
                         <path d="M10 2.5 3.5 5v4.3c0 4 2.8 6.8 6.5 8.2 3.7-1.4 6.5-4.2 6.5-8.2V5L10 2.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
                         <path d="m7.5 9.8 1.7 1.7 3.5-3.6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    Tes réponses sont traitées par les modèles du projet
+                    Yanıtların proje modelleri tarafından işlenir
                 </span>
             </div>
         </div>
@@ -34,7 +34,7 @@
             <img
                 class="hero-thinking-student"
                 src="{{ url_for('static', filename='images/image.png') }}"
-                alt="Étudiant qui réfléchit à ses études"
+                alt="Çalışmalarını düşünmekte olan öğrenci"
                 decoding="async"
             >
         </div>
@@ -45,78 +45,78 @@
             <div class="section-heading">
                 <span class="section-number">01</span>
                 <div>
-                    <h2 id="sectionProfile">Ton parcours &amp; ton entourage</h2>
-                    <p>Quelques repères sur ton quotidien et tes relations.</p>
+                    <h2 id="sectionProfile">Eğitim yolun &amp; çevren</h2>
+                    <p>Günlük hayatın ve ilişkilerin hakkında bazı bilgiler.</p>
                 </div>
             </div>
 
             <div class="question-grid">
                 <div class="question-field">
-                    <label for="International_Student"><span>01</span> Es-tu un étudiant international&nbsp;?</label>
+                    <label for="International_Student"><span>01</span> Uluslararası öğrenci misin&nbsp;?</label>
                     <select id="International_Student" name="International_Student" required>
-                        <option value="">Choisir une réponse</option>
-                        <option value="Yes">Oui</option><option value="No">Non</option>
+                        <option value="">Bir yanıt seç</option>
+                        <option value="Yes">Evet</option><option value="No">Hayır</option>
                     </select>
                 </div>
                 <div class="question-field">
-                    <label for="Study_Level"><span>02</span> Quel est ton niveau d'études&nbsp;?</label>
+                    <label for="Study_Level"><span>02</span> Eğitim seviyen nedir&nbsp;?</label>
                     <select id="Study_Level" name="Study_Level" required>
-                        <option value="">Choisir une réponse</option>
-                        <option value="Bachelor Year 1">Licence — année 1</option>
-                        <option value="Bachelor Year 2">Licence — année 2</option>
-                        <option value="Bachelor Year 3">Licence — année 3</option>
-                        <option value="Master Year 1">Master — année 1</option>
-                        <option value="Master Year 2">Master — année 2</option>
-                        <option value="PhD">Doctorat</option>
+                        <option value="">Bir yanıt seç</option>
+                        <option value="Bachelor Year 1">Lisans — 1. yıl</option>
+                        <option value="Bachelor Year 2">Lisans — 2. yıl</option>
+                        <option value="Bachelor Year 3">Lisans — 3. yıl</option>
+                        <option value="Master Year 1">Yüksek lisans — 1. yıl</option>
+                        <option value="Master Year 2">Yüksek lisans — 2. yıl</option>
+                        <option value="PhD">Doktora</option>
                     </select>
                 </div>
                 <div class="question-field">
-                    <label for="GPA_Satisfaction"><span>03</span> Es-tu satisfait de tes résultats académiques&nbsp;?</label>
+                    <label for="GPA_Satisfaction"><span>03</span> Akademik sonuçlarından memnun musun&nbsp;?</label>
                     <select id="GPA_Satisfaction" name="GPA_Satisfaction" required>
-                        <option value="">Choisir une réponse</option>
-                        <option value="Very Satisfied">Très satisfait</option>
-                        <option value="Satisfied">Satisfait</option>
-                        <option value="Neutral">Neutre</option>
-                        <option value="Dissatisfied">Insatisfait</option>
-                        <option value="Very Dissatisfied">Très insatisfait</option>
+                        <option value="">Bir yanıt seç</option>
+                        <option value="Very Satisfied">Çok memnun</option>
+                        <option value="Satisfied">Memnun</option>
+                        <option value="Neutral">Nötr</option>
+                        <option value="Dissatisfied">Memnun değil</option>
+                        <option value="Very Dissatisfied">Hiç memnun değil</option>
                     </select>
                 </div>
                 <div class="question-field">
-                    <label for="Lives_Alone"><span>04</span> Vis-tu seul&nbsp;?</label>
+                    <label for="Lives_Alone"><span>04</span> Yalnız mı yaşıyorsun&nbsp;?</label>
                     <select id="Lives_Alone" name="Lives_Alone" required>
-                        <option value="">Choisir une réponse</option>
-                        <option value="Yes">Oui</option><option value="No">Non</option>
+                        <option value="">Bir yanıt seç</option>
+                        <option value="Yes">Evet</option><option value="No">Hayır</option>
                     </select>
                 </div>
                 <div class="question-field">
-                    <label for="Relationship_Status"><span>05</span> Quelle est ta situation relationnelle&nbsp;?</label>
+                    <label for="Relationship_Status"><span>05</span> İlişki durumun nedir&nbsp;?</label>
                     <select id="Relationship_Status" name="Relationship_Status" required>
-                        <option value="">Choisir une réponse</option>
-                        <option value="Single">Célibataire</option>
-                        <option value="In a relationship">En couple</option>
-                        <option value="It's complicated">C'est compliqué</option>
+                        <option value="">Bir yanıt seç</option>
+                        <option value="Single">Bekâr</option>
+                        <option value="In a relationship">İlişkide</option>
+                        <option value="It's complicated">Karmaşık</option>
                     </select>
                 </div>
                 <div class="question-field">
-                    <label for="Sociability_Level"><span>06</span> Comment décrirais-tu ta sociabilité&nbsp;?</label>
+                    <label for="Sociability_Level"><span>06</span> Sosyallik seviyeni nasıl tarif edersin&nbsp;?</label>
                     <select id="Sociability_Level" name="Sociability_Level" required>
-                        <option value="">Choisir une réponse</option>
-                        <option value="Very Sociable">Très sociable</option>
-                        <option value="Sociable">Sociable</option>
-                        <option value="Moderate">Modérée</option>
-                        <option value="Introverted">Introvertie</option>
-                        <option value="Very Introverted">Très introvertie</option>
+                        <option value="">Bir yanıt seç</option>
+                        <option value="Very Sociable">Çok sosyal</option>
+                        <option value="Sociable">Sosyal</option>
+                        <option value="Moderate">Orta</option>
+                        <option value="Introverted">İçe dönük</option>
+                        <option value="Very Introverted">Çok içe dönük</option>
                     </select>
                 </div>
                 <div class="question-field">
-                    <label for="Close_Friends_Support"><span>07</span> Quel soutien reçois-tu de tes amis proches&nbsp;?</label>
+                    <label for="Close_Friends_Support"><span>07</span> Yakın arkadaşlarından ne kadar destek alıyorsun&nbsp;?</label>
                     <select id="Close_Friends_Support" name="Close_Friends_Support" required>
-                        <option value="">Choisir une réponse</option>
-                        <option value="Strong support network">Un très bon soutien</option>
-                        <option value="Good support network">Un bon soutien</option>
-                        <option value="Some">Un peu</option>
-                        <option value="Very few">Très peu</option>
-                        <option value="None at all">Aucun</option>
+                        <option value="">Bir yanıt seç</option>
+                        <option value="Strong support network">Çok güçlü destek</option>
+                        <option value="Good support network">İyi destek</option>
+                        <option value="Some">Bir miktar</option>
+                        <option value="Very few">Çok az</option>
+                        <option value="None at all">Hiç</option>
                     </select>
                 </div>
             </div>
@@ -126,72 +126,72 @@
             <div class="section-heading">
                 <span class="section-number section-number--coral">02</span>
                 <div>
-                    <h2 id="sectionHabits">Tes habitudes au quotidien</h2>
-                    <p>Sommeil, alimentation, activité et habitudes de vie.</p>
+                    <h2 id="sectionHabits">Günlük alışkanlıkların</h2>
+                    <p>Uyku, beslenme, aktivite ve yaşam alışkanlıkları.</p>
                 </div>
             </div>
 
             <div class="question-grid">
                 <div class="question-field">
-                    <label for="Loneliness_Frequency"><span>08</span> À quelle fréquence te sens-tu seul&nbsp;?</label>
+                    <label for="Loneliness_Frequency"><span>08</span> Kendini ne sıklıkla yalnız hissediyorsun&nbsp;?</label>
                     <select id="Loneliness_Frequency" name="Loneliness_Frequency" required>
-                        <option value="">Choisir une réponse</option>
-                        <option value="Never">Jamais</option><option value="Rarely">Rarement</option>
-                        <option value="Sometimes">Parfois</option><option value="Often">Souvent</option>
-                        <option value="Very Often">Très souvent</option>
+                        <option value="">Bir yanıt seç</option>
+                        <option value="Never">Hiçbir zaman</option><option value="Rarely">Nadiren</option>
+                        <option value="Sometimes">Bazen</option><option value="Often">Sık sık</option>
+                        <option value="Very Often">Çok sık</option>
                     </select>
                 </div>
                 <div class="question-field">
-                    <label for="Healthy_Diet"><span>09</span> Comment évalues-tu ton alimentation&nbsp;?</label>
+                    <label for="Healthy_Diet"><span>09</span> Beslenmeni nasıl değerlendirirsin&nbsp;?</label>
                     <select id="Healthy_Diet" name="Healthy_Diet" required>
-                        <option value="">Choisir une réponse</option>
-                        <option value="Very Good">Très bonne</option><option value="Good">Bonne</option>
-                        <option value="Average">Moyenne</option><option value="Poor">Mauvaise</option>
-                        <option value="Very Poor">Très mauvaise</option>
+                        <option value="">Bir yanıt seç</option>
+                        <option value="Very Good">Çok iyi</option><option value="Good">İyi</option>
+                        <option value="Average">Orta</option><option value="Poor">Kötü</option>
+                        <option value="Very Poor">Çok kötü</option>
                     </select>
                 </div>
                 <div class="question-field">
-                    <label for="Sleep_Quality"><span>10</span> Comment évalues-tu la qualité de ton sommeil&nbsp;?</label>
+                    <label for="Sleep_Quality"><span>10</span> Uyku kaliteni nasıl değerlendirirsin&nbsp;?</label>
                     <select id="Sleep_Quality" name="Sleep_Quality" required>
-                        <option value="">Choisir une réponse</option>
-                        <option value="Very Good">Très bonne</option><option value="Good">Bonne</option>
-                        <option value="Average">Moyenne</option><option value="Poor">Mauvaise</option>
-                        <option value="Very Poor">Très mauvaise</option>
+                        <option value="">Bir yanıt seç</option>
+                        <option value="Very Good">Çok iyi</option><option value="Good">İyi</option>
+                        <option value="Average">Orta</option><option value="Poor">Kötü</option>
+                        <option value="Very Poor">Çok kötü</option>
                     </select>
                 </div>
                 <div class="question-field">
-                    <label for="Physical_Activity"><span>11</span> À quelle fréquence pratiques-tu une activité physique&nbsp;?</label>
+                    <label for="Physical_Activity"><span>11</span> Ne sıklıkla fiziksel aktivite yapıyorsun&nbsp;?</label>
                     <select id="Physical_Activity" name="Physical_Activity" required>
-                        <option value="">Choisir une réponse</option>
-                        <option value="Regularly">Régulièrement</option>
-                        <option value="Occasionally">Occasionnellement</option>
-                        <option value="Never">Jamais</option>
+                        <option value="">Bir yanıt seç</option>
+                        <option value="Regularly">Düzenli olarak</option>
+                        <option value="Occasionally">Ara sıra</option>
+                        <option value="Never">Hiçbir zaman</option>
                     </select>
                 </div>
                 <div class="question-field">
-                    <label for="Smoking_Frequency"><span>12</span> À quelle fréquence fumes-tu&nbsp;?</label>
+                    <label for="Smoking_Frequency"><span>12</span> Ne sıklıkla sigara içiyorsun&nbsp;?</label>
                     <select id="Smoking_Frequency" name="Smoking_Frequency" required>
-                        <option value="">Choisir une réponse</option>
-                        <option value="Never">Jamais</option><option value="Occasionally">Occasionnellement</option>
-                        <option value="Regularly">Régulièrement</option>
+                        <option value="">Bir yanıt seç</option>
+                        <option value="Never">Hiçbir zaman</option><option value="Occasionally">Ara sıra</option>
+                        <option value="Regularly">Düzenli olarak</option>
                     </select>
                 </div>
                 <div class="question-field">
-                    <label for="Smoking_Reason"><span>13</span> Quelle est la raison de ta consommation de tabac&nbsp;?</label>
+                    <label for="Smoking_Reason"><span>13</span> Sigara kullanma nedenin nedir&nbsp;?</label>
                     <select id="Smoking_Reason" name="Smoking_Reason" required>
-                        <option value="">Choisir une réponse</option>
-                        <option value="Not applicable (Non-smoker)">Non concerné·e</option>
-                        <option value="Just for pleasure / Social habit">Plaisir ou habitude sociale</option>
-                        <option value="To avoid overthinking / relieve stress">Gérer le stress</option>
-                        <option value="To cope with loneliness / boredom">Gérer la solitude ou l'ennui</option>
+                        <option value="">Bir yanıt seç</option>
+                        <option value="Not applicable (Non-smoker)">Sigara kullanmıyorum</option>
+                        <option value="Just for pleasure / Social habit">Zevk veya sosyal alışkanlık</option>
+                        <option value="To avoid overthinking / relieve stress">Stresimi azaltmak için</option>
+                        <option value="To cope with loneliness / boredom">Yalnızlık veya sıkıntıyı başa çıkmak için</option>
                     </select>
                 </div>
                 <div class="question-field">
-                    <label for="Alcohol_For_Stress"><span>14</span> Consommes-tu de l'alcool pour gérer le stress&nbsp;?</label>
+                    <label for="Alcohol_For_Stress"><span>14</span> Stresi yönetmek için alkol kullanıyor musun&nbsp;?</label>
                     <select id="Alcohol_For_Stress" name="Alcohol_For_Stress" required>
-                        <option value="">Choisir une réponse</option>
-                        <option value="Never">Jamais</option><option value="Occasionally">Occasionnellement</option>
-                        <option value="Regularly">Régulièrement</option>
+                        <option value="">Bir yanıt seç</option>
+                        <option value="Never">Hiçbir zaman</option><option value="Occasionally">Ara sıra</option>
+                        <option value="Regularly">Düzenli olarak</option>
                     </select>
                 </div>
             </div>
@@ -201,75 +201,75 @@
             <div class="section-heading">
                 <span class="section-number section-number--lavender">03</span>
                 <div>
-                    <h2 id="sectionFeelings">Ton ressenti &amp; ta charge mentale</h2>
-                    <p>Comment tu te sens face aux études et à la pression.</p>
+                    <h2 id="sectionFeelings">Duyguların &amp; zihinsel yükün</h2>
+                    <p>Eğitimlere ve baskılara karşı nasıl hissettiğin.</p>
                 </div>
             </div>
 
             <div class="question-grid">
                 <div class="question-field">
-                    <label for="Overthinking_Frequency"><span>15</span> À quelle fréquence réfléchis-tu excessivement&nbsp;?</label>
+                    <label for="Overthinking_Frequency"><span>15</span> Ne sıklıkla aşırı düşünüp kafa yoruyorsun&nbsp;?</label>
                     <select id="Overthinking_Frequency" name="Overthinking_Frequency" required>
-                        <option value="">Choisir une réponse</option>
-                        <option value="Very Low">Très rarement</option><option value="Low">Rarement</option>
-                        <option value="Moderate">Modérément</option><option value="High">Souvent</option>
-                        <option value="Constant Overthinking">Presque constamment</option>
+                        <option value="">Bir yanıt seç</option>
+                        <option value="Very Low">Çok nadiren</option><option value="Low">Nadiren</option>
+                        <option value="Moderate">Orta sıklıkta</option><option value="High">Sık sık</option>
+                        <option value="Constant Overthinking">Hemen hemen sürekli</option>
                     </select>
                 </div>
                 <div class="question-field">
-                    <label for="Anxiety_And_Fears"><span>16</span> À quelle fréquence ressens-tu de l'anxiété ou des peurs&nbsp;?</label>
+                    <label for="Anxiety_And_Fears"><span>16</span> Ne sıklıkla kaygı veya korku hissediyorsun&nbsp;?</label>
                     <select id="Anxiety_And_Fears" name="Anxiety_And_Fears" required>
-                        <option value="">Choisir une réponse</option>
-                        <option value="Never">Jamais</option><option value="Rarely">Rarement</option>
-                        <option value="Sometimes">Parfois</option><option value="Often">Souvent</option>
-                        <option value="Very Often">Très souvent</option>
+                        <option value="">Bir yanıt seç</option>
+                        <option value="Never">Hiçbir zaman</option><option value="Rarely">Nadiren</option>
+                        <option value="Sometimes">Bazen</option><option value="Often">Sık sık</option>
+                        <option value="Very Often">Çok sık</option>
                     </select>
                 </div>
                 <div class="question-field">
-                    <label for="Family_Academic_Pressure"><span>17</span> Quelle pression académique ressens-tu de ta famille&nbsp;?</label>
+                    <label for="Family_Academic_Pressure"><span>17</span> Ailenden ne kadar akademik baskı hissediyorsun&nbsp;?</label>
                     <select id="Family_Academic_Pressure" name="Family_Academic_Pressure" required>
-                        <option value="">Choisir une réponse</option>
-                        <option value="No pressure">Aucune pression</option>
-                        <option value="Low pressure">Faible</option>
-                        <option value="Moderate pressure">Modérée</option>
-                        <option value="High pressure">Élevée</option>
-                        <option value="Extreme pressure">Très élevée</option>
+                        <option value="">Bir yanıt seç</option>
+                        <option value="No pressure">Baskı yok</option>
+                        <option value="Low pressure">Düşük</option>
+                        <option value="Moderate pressure">Orta</option>
+                        <option value="High pressure">Yüksek</option>
+                        <option value="Extreme pressure">Çok yüksek</option>
                     </select>
                 </div>
                 <div class="question-field">
-                    <label for="Overwhelmed_By_Study_Workload"><span>18</span> Te sens-tu dépassé·e par ta charge de travail&nbsp;?</label>
+                    <label for="Overwhelmed_By_Study_Workload"><span>18</span> Ders yükünün altında eziliyor musun&nbsp;?</label>
                     <select id="Overwhelmed_By_Study_Workload" name="Overwhelmed_By_Study_Workload" required>
-                        <option value="">Choisir une réponse</option>
-                        <option value="Never">Jamais</option><option value="Rarely">Rarement</option>
-                        <option value="Sometimes">Parfois</option><option value="Often">Souvent</option>
-                        <option value="Very Often">Très souvent</option>
+                        <option value="">Bir yanıt seç</option>
+                        <option value="Never">Hiçbir zaman</option><option value="Rarely">Nadiren</option>
+                        <option value="Sometimes">Bazen</option><option value="Often">Sık sık</option>
+                        <option value="Very Often">Çok sık</option>
                     </select>
                 </div>
                 <div class="question-field">
-                    <label for="Crying_Due_To_Stress"><span>19</span> À quelle fréquence pleures-tu à cause du stress&nbsp;?</label>
+                    <label for="Crying_Due_To_Stress"><span>19</span> Stres yüzünden ne sıklıkla ağlarsın&nbsp;?</label>
                     <select id="Crying_Due_To_Stress" name="Crying_Due_To_Stress" required>
-                        <option value="">Choisir une réponse</option>
-                        <option value="Never">Jamais</option><option value="Rarely">Rarement</option>
-                        <option value="Sometimes">Parfois</option><option value="Often">Souvent</option>
-                        <option value="Very Often">Très souvent</option>
+                        <option value="">Bir yanıt seç</option>
+                        <option value="Never">Hiçbir zaman</option><option value="Rarely">Nadiren</option>
+                        <option value="Sometimes">Bazen</option><option value="Often">Sık sık</option>
+                        <option value="Very Often">Çok sık</option>
                     </select>
                 </div>
                 <div class="question-field">
-                    <label for="Lack_Of_Rest_Time"><span>20</span> À quelle fréquence manques-tu de temps pour te reposer&nbsp;?</label>
+                    <label for="Lack_Of_Rest_Time"><span>20</span> Dinlenmek için ne sıklıkla yeterli zamanın olmuyor&nbsp;?</label>
                     <select id="Lack_Of_Rest_Time" name="Lack_Of_Rest_Time" required>
-                        <option value="">Choisir une réponse</option>
-                        <option value="Never">Jamais</option><option value="Rarely">Rarement</option>
-                        <option value="Sometimes">Parfois</option><option value="Often">Souvent</option>
-                        <option value="Very Often">Très souvent</option>
+                        <option value="">Bir yanıt seç</option>
+                        <option value="Never">Hiçbir zaman</option><option value="Rarely">Nadiren</option>
+                        <option value="Sometimes">Bazen</option><option value="Often">Sık sık</option>
+                        <option value="Very Often">Çok sık</option>
                     </select>
                 </div>
                 <div class="question-field">
-                    <label for="Morning_Fatigue"><span>21</span> À quelle fréquence ressens-tu de la fatigue le matin&nbsp;?</label>
+                    <label for="Morning_Fatigue"><span>21</span> Sabahları ne sıklıkla yorgun hissediyorsun&nbsp;?</label>
                     <select id="Morning_Fatigue" name="Morning_Fatigue" required>
-                        <option value="">Choisir une réponse</option>
-                        <option value="Never">Jamais</option><option value="Rarely">Rarement</option>
-                        <option value="Sometimes">Parfois</option><option value="Often">Souvent</option>
-                        <option value="Almost Every Day">Presque tous les jours</option>
+                        <option value="">Bir yanıt seç</option>
+                        <option value="Never">Hiçbir zaman</option><option value="Rarely">Nadiren</option>
+                        <option value="Sometimes">Bazen</option><option value="Often">Sık sık</option>
+                        <option value="Almost Every Day">Hemen hemen her gün</option>
                     </select>
                 </div>
             </div>
@@ -277,16 +277,16 @@
 
         <div class="form-actions">
             <button class="button button--quiet" type="reset" id="resetButton">
-                Recommencer
+                Baştan başla
             </button>
             <button class="button button--primary" type="submit" id="submitButton" disabled>
-                <span>Voir mon bilan</span>
+                Değerlendirmemi gör
                 <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
                     <path d="M4 10h12m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </button>
         </div>
-        <p class="submit-hint" id="submitHint">Réponds aux 21 questions pour continuer.</p>
+        <p class="submit-hint" id="submitHint">Devam etmek için 21 soruyu yanıtla.</p>
     </form>
 
     <div class="error-card" id="errorMessage" role="alert" hidden>
@@ -300,9 +300,9 @@
             <span class="loading-core">✦</span>
         </div>
         <div>
-            <p class="loading-eyebrow">ANALYSE EN COURS</p>
-            <h2>On prépare ton bilan…</h2>
-            <p>Les deux modèles étudient tes réponses. Cela ne prend qu'un instant.</p>
+            <p class="loading-eyebrow">ANALİZ DEVAM EDİYOR</p>
+            <h2>Değerlendirmen hazırlanıyor…</h2>
+            <p>İki model yanıtlarını inceliyor. Bu yalnızca kısa bir süre alır.</p>
         </div>
         <div class="loading-dots" aria-hidden="true"><i></i><i></i><i></i></div>
     </section>
@@ -310,9 +310,9 @@
     <section class="results-section" id="resultsPanel" aria-live="polite" hidden>
         <div class="results-heading">
             <div>
-                <span class="eyebrow"><span></span> TON BILAN EST PRÊT</span>
-                <h2>Deux regards sur tes réponses.</h2>
-                <p>Voici les estimations produites par les modèles du projet.</p>
+                <span class="eyebrow"><span></span> DEĞERLENDİRMEN HAZIR</span>
+                <h2>Yanıtlarına iki modelden bakış.</h2>
+                <p>Proje modellerinin ürettiği tahminler.</p>
             </div>
             <span class="results-check" aria-hidden="true">✓</span>
         </div>
@@ -320,9 +320,8 @@
         <div class="result-disclaimer">
             <span aria-hidden="true">ⓘ</span>
             <p>
-                Ces résultats sont issus d'un modèle académique entraîné
-                sur un jeu de données artificiel. Ils ne constituent pas
-                un diagnostic et ne remplacent pas l'avis d'un professionnel.
+                Bu sonuçlar yapay bir veri kümesi üzerinde eğitilmiş akademik modellerden gelir.
+                Teşhis niteliğinde değildir ve profesyonel bir uzmanın görüşünün yerine geçmez.
             </p>
         </div>
     </section>

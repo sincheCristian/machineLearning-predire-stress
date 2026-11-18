@@ -6,40 +6,40 @@
     hidden
 >
     <div class="dashboard-heading">
-        <span class="eyebrow"><span></span> VUE D'ENSEMBLE</span>
-        <h1>Propriétés du projet</h1>
-        <p>Les repères qui décrivent le jeu de données et le questionnaire.</p>
+        <span class="eyebrow"><span></span> GENEL BAKIŞ</span>
+        <h1>Proje Özellikleri</h1>
+        <p>Veri kümesini ve anketi tanımlayan bilgiler.</p>
     </div>
     <div class="stat-grid">
         <article class="stat-card">
             <span class="stat-icon stat-icon--blue" aria-hidden="true">500</span>
-            <p>Observations</p>
-            <small>Jeu de données artificiel</small>
+            <p>Gözlem</p>
+            <small>Yapay veri kümesi</small>
         </article>
         <article class="stat-card">
             <span class="stat-icon stat-icon--cyan" aria-hidden="true">400</span>
-            <p>Entraînement</p>
-            <small>Observations utilisées pour apprendre</small>
+            <p>Eğitim</p>
+            <small>Öğrenmek için kullanılan gözlem sayısı</small>
         </article>
         <article class="stat-card">
             <span class="stat-icon stat-icon--violet" aria-hidden="true">100</span>
             <p>Test</p>
-            <small>Observations réservées à l’évaluation</small>
+            <small>Değerlendirme için ayrılan gözlem sayısı</small>
         </article>
         <article class="stat-card">
             <span class="stat-icon stat-icon--blue" aria-hidden="true">21</span>
-            <p>Variables d’entrée</p>
-            <small>Réponses fournies aux modèles</small>
+            <p>Girdi değişkenleri</p>
+            <small>Modellere verilen yanıtlar</small>
         </article>
         <article class="stat-card">
             <span class="stat-icon stat-icon--cyan" aria-hidden="true">91</span>
-            <p>Variables encodées</p>
-            <small>Après transformation One-Hot</small>
+            <p>Kodlanan değişkenler</p>
+            <small>One-Hot dönüşümünden sonra</small>
         </article>
         <article class="stat-card">
             <span class="stat-icon stat-icon--violet" aria-hidden="true">2</span>
-            <p>Classes cibles</p>
-            <small>Stable ou à risque</small>
+            <p>Hedef sınıflar</p>
+            <small>Stabil veya riskli</small>
         </article>
     </div>
     <div class="info-panel">
@@ -50,26 +50,26 @@
                 </svg>
             </span>
             <div>
-                <h2>Structure des données</h2>
-                <p>Les données de test restent séparées pendant l’apprentissage.</p>
+                <h2>Veri yapısı</h2>
+                <p>Test verileri eğitim sırasında ayrı tutulur.</p>
             </div>
         </div>
         <div class="property-list">
-            <div><span>Fichier source</span><strong>dataset/dataset.csv</strong></div>
-            <div><span>Colonne cible</span><strong>Depression_Status</strong></div>
-            <div><span>Répartition</span><strong>400 entraînement · 100 test</strong></div>
-            <div><span>Encodage</span><strong>One-hot encoding · 21 → 91 variables</strong></div>
-            <div><span>Prévention des fuites</span><strong>Prétraitement ajusté sur l’entraînement</strong></div>
+            <div><span>Kaynak dosya</span><strong>dataset/dataset.csv</strong></div>
+            <div><span>Hedef sütun</span><strong>Depression_Status</strong></div>
+            <div><span>Dağılım</span><strong>400 eğitim · 100 test</strong></div>
+            <div><span>Kodlama</span><strong>One-hot encoding · 21 → 91 değişken</strong></div>
+            <div><span>Veri sızıntısı önleme</span><strong>Ön işleme yalnızca eğitim verisine göre ayarlanır</strong></div>
         </div>
     </div>
     <div class="class-info-grid">
         <article class="class-info-card">
             <span class="class-dot class-dot--stable"></span>
-            <div><small>CLASSE 0</small><h3>Stable / sans dépression</h3></div>
+            <div><small>SINIF 0</small><h3>Stabil / depresif değil</h3></div>
         </article>
         <article class="class-info-card">
             <span class="class-dot class-dot--risk"></span>
-            <div><small>CLASSE 1</small><h3>À risque / dépression</h3></div>
+            <div><small>SINIF 1</small><h3>Riskli / depresif</h3></div>
         </article>
     </div>
 </section>

@@ -6,91 +6,91 @@
     hidden
 >
     <div class="dashboard-heading">
-        <span class="eyebrow"><span></span> CLASSIFICATION</span>
-        <h1>Les modèles comparés</h1>
-        <p>Sept modèles sont évalués sur le jeu de test ; SVM et régression logistique produisent les prédictions du questionnaire.</p>
+        <span class="eyebrow"><span></span> SINIFLANDIRMA</span>
+        <h1>Karşılaştırılan Modeller</h1>
+        <p>Yedi model test verisi üzerinde değerlendirilir; SVM ve lojistik regresyon anket tahminlerini üretir.</p>
     </div>
     <div class="model-detail-grid">
         <article class="model-detail-card">
             <div class="model-detail-top">
                 <span class="model-symbol">SVM</span>
-                <span class="model-type">MODÈLE 01</span>
+                <span class="model-type">MODEL 01</span>
             </div>
             <h2>Support Vector Machine</h2>
             <p>
-                Sépare les classes en recherchant une frontière qui maximise leur marge.
+                Sınıflar arasındaki marjı maksimize eden sınırı bularak sınıfları ayırır.
             </p>
-            <div class="model-tags"><span>Classification</span><span>Noyau RBF</span><span>Probabilités</span></div>
-            <div class="model-status model-status--live"><span></span> Actif pour les bilans</div>
+            <div class="model-tags"><span>Sınıflandırma</span><span>RBF Çekirdeği</span><span>Olasılıklar</span></div>
+            <div class="model-status model-status--live"><span></span> Değerlendirmelerde aktif</div>
         </article>
         <article class="model-detail-card">
             <div class="model-detail-top">
                 <span class="model-symbol model-symbol--violet">LR</span>
-                <span class="model-type">MODÈLE 02</span>
+                <span class="model-type">MODEL 02</span>
             </div>
-            <h2>Régression logistique</h2>
+            <h2>Lojistik Regresyon</h2>
             <p>
-                Estime la probabilité de chaque classe à partir d’une combinaison des variables.
+                Değişkenlerin birleşiminden her sınıfın olasılığını tahmin eder.
             </p>
-            <div class="model-tags"><span>Classification</span><span>Modèle linéaire</span><span>Probabilités</span></div>
-            <div class="model-status model-status--live"><span></span> Actif pour les bilans</div>
+            <div class="model-tags"><span>Sınıflandırma</span><span>Doğrusal model</span><span>Olasılıklar</span></div>
+            <div class="model-status model-status--live"><span></span> Değerlendirmelerde aktif</div>
         </article>
         <article class="model-detail-card">
             <div class="model-detail-top">
                 <span class="model-symbol model-symbol--violet">DT</span>
-                <span class="model-type">MODÈLE 03</span>
+                <span class="model-type">MODEL 03</span>
             </div>
-            <h2>Arbre de décision</h2>
-            <p>Applique une suite de règles pour répartir les observations entre les classes.</p>
-            <div class="model-tags"><span>Règles</span><span>Arbre</span></div>
-            <div class="model-status model-status--evaluation"><span></span> Évalué sur le jeu de test</div>
+            <h2>Karar Ağacı</h2>
+            <p>Gözlemleri sınıflara ayırmak için bir kural dizisi uygular.</p>
+            <div class="model-tags"><span>Kurallar</span><span>Ağaç</span></div>
+            <div class="model-status model-status--evaluation"><span></span> Test verisi üzerinde değerlendirildi</div>
         </article>
         <article class="model-detail-card">
             <div class="model-detail-top">
                 <span class="model-symbol">KNN</span>
-                <span class="model-type">MODÈLE 04</span>
+                <span class="model-type">MODEL 04</span>
             </div>
-            <h2>K plus proches voisins</h2>
-            <p>Attribue une classe en comparant chaque observation à ses voisins les plus proches.</p>
-            <div class="model-tags"><span>Voisinage</span><span>Distance</span></div>
-            <div class="model-status model-status--evaluation"><span></span> Évalué sur le jeu de test</div>
+            <h2>K En Yakın Komşu</h2>
+            <p>Her gözlemi en yakın komşularıyla karşılaştırarak bir sınıf atar.</p>
+            <div class="model-tags"><span>Komşuluk</span><span>Mesafe</span></div>
+            <div class="model-status model-status--evaluation"><span></span> Test verisi üzerinde değerlendirildi</div>
         </article>
         <article class="model-detail-card">
             <div class="model-detail-top">
                 <span class="model-symbol model-symbol--violet">ANN</span>
-                <span class="model-type">MODÈLE 05</span>
+                <span class="model-type">MODEL 05</span>
             </div>
-            <h2>Réseau de neurones (ANN)</h2>
-            <p>Apprend des relations complexes à travers plusieurs couches de neurones.</p>
-            <div class="model-tags"><span>Réseau neuronal</span><span>Non linéaire</span></div>
-            <div class="model-status model-status--evaluation"><span></span> Évalué sur le jeu de test</div>
+            <h2>Sinir Ağı (ANN)</h2>
+            <p>Birden fazla nöron katmanı aracılığıyla karmaşık ilişkileri öğrenir.</p>
+            <div class="model-tags"><span>Sinir ağı</span><span>Doğrusal olmayan</span></div>
+            <div class="model-status model-status--evaluation"><span></span> Test verisi üzerinde değerlendirildi</div>
         </article>
         <article class="model-detail-card">
             <div class="model-detail-top">
                 <span class="model-symbol">RF</span>
-                <span class="model-type">MODÈLE 06</span>
+                <span class="model-type">MODEL 06</span>
             </div>
-            <h2>Forêt aléatoire</h2>
-            <p>Combine les décisions de plusieurs arbres pour produire une prédiction agrégée.</p>
-            <div class="model-tags"><span>Ensemble</span><span>Arbres</span></div>
-            <div class="model-status model-status--evaluation"><span></span> Évalué sur le jeu de test</div>
+            <h2>Rastgele Orman</h2>
+            <p>Bir tahmin üretmek için birden fazla ağacın kararlarını birleştirir.</p>
+            <div class="model-tags"><span>Topluluk</span><span>Ağaçlar</span></div>
+            <div class="model-status model-status--evaluation"><span></span> Test verisi üzerinde değerlendirildi</div>
         </article>
         <article class="model-detail-card">
             <div class="model-detail-top">
                 <span class="model-symbol model-symbol--violet">GB</span>
-                <span class="model-type">MODÈLE 07</span>
+                <span class="model-type">MODEL 07</span>
             </div>
             <h2>Gradient Boosting</h2>
-            <p>Entraîne des arbres successifs qui corrigent progressivement les erreurs précédentes.</p>
+            <p>Önceki hataları aşamalı olarak düzelten ardışık ağaçlar eğitir.</p>
             <div class="model-tags"><span>Ensemble</span><span>Boosting</span></div>
-            <div class="model-status model-status--evaluation"><span></span> Évalué sur le jeu de test</div>
+            <div class="model-status model-status--evaluation"><span></span> Test verisi üzerinde değerlendirildi</div>
         </article>
     </div>
     <div class="info-panel model-info-panel">
         <span class="panel-icon" aria-hidden="true">i</span>
         <p>
-            Les cinq autres modèles servent à la comparaison expérimentale et ne sont pas appelés par le questionnaire.
-            Consulte <strong>Graphiques</strong> pour comparer leurs métriques et matrices de confusion.
+            Diğer beş model deneysel karşılaştırma içindir ve anket tarafından kullanılmaz.
+            Ölçümleri ve karmaşıklık matrislerini karşılaştırmak için <strong>Grafikler</strong> bölümüne bak.
         </p>
     </div>
 </section>
